@@ -1,30 +1,31 @@
-# React + TypeScript + Vite
+# Game Hub: A simple first page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Discover a new level of interaction with Game Hub, a state-of-the-art web application for video game enthusiasts. Developed with the latest web technologies. Game Hub stands out as a testament to clean, maintainable, and responsive web development.
 
-Currently, two official plugins are available:
+## Responsive Design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Engineered to perfection, Game Hub boasts a fully responsive design, ensuring a seamless user experience across all devices. Whether on a desktop, tablet, or mobile phone, the layout adapts fluidly, maintaining the integrity and accessibility of the gaming content.
 
-## Expanding the ESLint configuration
+## Advanced Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Search Functionality:** Implemented a dynamic search component allowing users to effortlessly find games in real-time, enhancing the interactive experience.
+- **Complex Filtering:** Skillfully crafted a filtering system enabling users to sort games by platforms, utilizing the power of modern JavaScript to process API responses.
+- **Sorting Mechanism:** Designed an intuitive sorting feature that orders games based on different criteria, showcasing the ability to manipulate data arrays efficiently.
+- **Chakra UI Components:** Integrated Chakra UI, leveraging its comprehensive suite of accessible and reusable React components to accelerate the development process.
 
-- Configure the top-level `parserOptions` property like this:
+## Code Excellence
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- **Modern React:** Utilized the latest React features, including Hooks for state management and side effects, Context for state distribution, and Router for navigation.
+- **API Integration:** Showcased expertise in working with external APIs by fetching and managing data from the RAWG Video Games Database API with Axios.
+- **Custom Hooks:** Demonstrated advanced React concepts by creating custom hooks, encapsulating reusable logic to keep the component tree clean and functional.
+- **State Management:** Mastered state management patterns, ensuring that the application scales gracefully while remaining bug-free.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Run Locally
+
+Clone the project and install the dependencies to experience Game Hub firsthand:
+
+```bash
+git clone https://github.com/elhamgholami/game-hub.git
+cd game-hub
+npm install
+npm run dev
