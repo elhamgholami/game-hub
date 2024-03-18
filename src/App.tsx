@@ -9,40 +9,50 @@ import { PlatformSelector } from "./components/PlatformSelector";
 import { SortSelector } from "./components/SortSelector";
 import { GameHeading } from "./components/GameHeading";
 
-
-export interface GameQuery
-{
-  genre: Genre| null;
-  platform: Platform| null;
-  sort: string|null;
+export interface GameQuery {
+  genre: Genre | null;
+  platform: Platform | null;
+  sort: string | null;
   search: string;
 }
 
 function App() {
-  const[gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
   return (
     <>
       <Grid
         templateAreas={{ lg: `"nav nav" "aside main"`, base: `"nav" "main"` }}
       >
         <GridItem area="nav">
-          <NavBar onSearch={(search) => setGameQuery({...gameQuery, search})}/>
+          <NavBar
+            onSearch={(search) => setGameQuery({ ...gameQuery, search })}
+          />
         </GridItem>
         <Show above="lg">
           <GridItem area="aside" paddingX={5}>
-            <GenreList selectedGenre = {gameQuery.genre} onSelectedGenre={(genre) => setGameQuery({...gameQuery, genre})} />
+            <GenreList
+              selectedGenre={gameQuery.genre}
+              onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+            />
           </GridItem>
         </Show>
-        <GridItem area="main" >  
-        <Box paddingLeft={10}>
+        <GridItem area="main">
+          <Box paddingLeft={10}>
+            <GameHeading gameQuery={gameQuery} />
 
-        <GameHeading gameQuery={gameQuery}/>
-
-        <HStack  spacing={5}>
-          <PlatformSelector selectedPlatform = {gameQuery.platform} onSelectPlatform={platform => setGameQuery({...gameQuery, platform})}/>
-          <SortSelector selectedSort = {gameQuery.sort} onSelectSort={(sort) => setGameQuery({...gameQuery, sort})}/>
-        </HStack>
-        </Box>
+            <HStack spacing={5}>
+              <PlatformSelector
+                selectedPlatform={gameQuery.platform}
+                onSelectPlatform={(platform) =>
+                  setGameQuery({ ...gameQuery, platform })
+                }
+              />
+              <SortSelector
+                selectedSort={gameQuery.sort}
+                onSelectSort={(sort) => setGameQuery({ ...gameQuery, sort })}
+              />
+            </HStack>
+          </Box>
           <GameGrid gameQuery={gameQuery} />
         </GridItem>
       </Grid>
