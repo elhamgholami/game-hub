@@ -3,12 +3,17 @@ import apilogo from "../assets/logo.png";
 import { ColorModeSwitch } from "./ColorModeSwitch";
 import { SearchInput } from "./SearchInput";
 
-function NavBar() {
+interface Props
+{
+    onSearch: (searchQuery:string) => void;
+}
+
+function NavBar({onSearch}:Props) {
   return (
     <>
       <HStack  padding="10px">
         <Image src={apilogo} boxSize="60px"></Image>
-        <SearchInput/>
+        <SearchInput onSearch={onSearch}/>
         <ColorModeSwitch />
       </HStack>
     </>
