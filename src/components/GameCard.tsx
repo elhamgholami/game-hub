@@ -9,17 +9,16 @@ interface Props {
 
 export function GameCard({ game }: Props) {
   return (
-    
     <Card borderRadius={10} overflow="hidden">
-      <Image objectFit='cover' src={game.background_image}></Image>
+      <Image objectFit="cover" src={game.background_image}></Image>
       <CardBody>
-        <Heading fontSize="2xl">{game.name}</Heading>
-        <HStack paddingX={1} justifyContent="space-between">
+        <HStack paddingX={1} justifyContent="space-between" marginBottom={3}>
           <PlatFormIconList
             platforms={game.parent_platforms.map((p) => p.platform)}
           ></PlatFormIconList>
           <CriticScore score={game.metacritic}></CriticScore>
         </HStack>
+        <Heading fontSize="xl">{game.name}</Heading>
       </CardBody>
     </Card>
   );
